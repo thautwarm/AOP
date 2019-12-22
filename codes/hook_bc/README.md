@@ -1,6 +1,6 @@
 # Python Import Hooker
 
-1. Doc of Import: [https://docs.python.org/3/reference/import.html]
+1. [documentation of import](https://docs.python.org/3/reference/import.html)
 2. Explanation:
    1. when `import`ing, Python uses `importlib.abc.Finder`s `sys.meta_path` to find a
    `importlib._bootstrap.ModuleSpec`.
