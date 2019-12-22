@@ -54,7 +54,6 @@ class MyFinder(PathFinder):
     @classmethod
     def find_spec(cls, fullname, path=None, target=None):
         spec: ModuleSpec = PathFinder.find_spec(fullname, path, target)
-        print(spec, spec.loader)
         if spec and spec.loader and isinstance(
                 spec.loader, FileLoader) and not isinstance(
                     spec.loader, ExtensionFileLoader):

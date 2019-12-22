@@ -2,4 +2,4 @@ def f(x):
     return x + 1
 
 
-print(f(1))
+a = print(f(1))
