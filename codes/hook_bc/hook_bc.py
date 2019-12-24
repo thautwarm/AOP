@@ -23,18 +23,7 @@ class MyLoader(Loader):
         if code is None:
             raise ImportError('cannot load module {!r} when get_code() '
                               'returns None'.format(module.__name__))
-        __glob_refs__ = module.__glob_refs__ = {
-        }
         bc = Bytecode.from_code(code)
-
-        def update_generations(name):
-            functions = __glob_refs__.get(name, None)
-            if functions is None:
-                return
-            for fn in functions:
-                fn.__update_global_ref__(name)
-
-        module.__dict__['__update_generations__'] = update_generations
 
         def update_bc():
             for each in bc:
